@@ -1,5 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
+import swaggerUi from "swagger-ui-express";
+import swaggerDocument from "../swagger.json";
 
 // Importando a infraestrutura (Banco real)
 import { TaskRepositoryMongo } from "./infrastructure/database/TaskRepositoryMongo";
@@ -15,7 +17,9 @@ import { GetTasksController } from "./presentation/controllers/GetTasksControlle
 import { CompleteTaskController } from "./presentation/controllers/CompleteTaskController";
 
 const app = express();
-app.use(express.json()); // Permite o Express entender JSON no body das requisições
+app.use(express.json());
+// Rota da documentação
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument)); // Permite o Express entender JSON no body das requisições
 
 // 1. INJEÇÃO DE DEPENDÊNCIA (Montando os blocos)
 // A) Criamos a instância do banco de dados real
