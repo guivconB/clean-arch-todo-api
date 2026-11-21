@@ -20,6 +20,7 @@ O projeto segue a separação por camadas da Clean Architecture:
 - **MongoDB** com **Mongoose**
 - **Jest** (Testes Unitários)
 - **ts-node-dev** (Ambiente de desenvolvimento)
+- **Swagger UI** (documentação interativa em `/api-docs`)
 
 ## 🛠️ Como rodar o projeto
 
@@ -30,7 +31,8 @@ O projeto segue a separação por camadas da Clean Architecture:
 ### Instalação
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
+   git clone https://github.com/guivconB/clean-arch-todo-api.git
+   cd clean-arch-todo-api
    ```
 2. Instale as dependências:
    ```bash
@@ -40,7 +42,7 @@ O projeto segue a separação por camadas da Clean Architecture:
    ```bash
    npm run dev
    ```
-   A API estará rodando em `http://localhost:3000`.
+   A API estará rodando em `http://localhost:3000` e a documentação Swagger em `http://localhost:3000/api-docs`.
 
 ## 🧪 Como rodar os testes
 
@@ -56,3 +58,10 @@ npm test
   - *Body*: `{"title": "Sua tarefa", "description": "Sua descrição"}`
 - **`GET /tasks`**: Lista todas as tarefas.
 - **`PATCH /tasks/:id/complete`**: Marca uma tarefa específica como concluída.
+- **`GET /api-docs`**: Documentação Swagger interativa.
+
+## 🗺️ Próximos passos
+
+- [ ] Caso de uso `DeleteTask` com a rota `DELETE /tasks/:id`.
+- [ ] Habilitar CORS para um frontend.
+- [ ] Frontend em React + Vite + TypeScript consumindo a API.
